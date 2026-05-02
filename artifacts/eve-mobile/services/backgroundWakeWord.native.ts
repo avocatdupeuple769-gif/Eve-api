@@ -61,7 +61,7 @@ export const wakeWordBackgroundTask = async (_taskData: unknown): Promise<void> 
       if (!uri) { await sleep(200); continue; }
 
       const base64 = await FileSystem.readAsStringAsync(uri, {
-        encoding: FileSystem.EncodingType.Base64,
+        encoding: "base64" as any,
       });
       try { await FileSystem.deleteAsync(uri, { idempotent: true }); } catch {}
 
