@@ -63,7 +63,7 @@ export function useWakeWord(domain: string, onWakeWord: () => void) {
       recordingRef.current = null;
       const uri = rec.getURI();
       if (!uri) { if (loopActiveRef.current) setTimeout(foregroundLoop, 100); return; }
-      const base64 = await FileSystem.readAsStringAsync(uri, { encoding: FileSystem.EncodingType.Base64 });
+      const base64 = await FileSystem.readAsStringAsync(uri, { encoding: "base64" as any });
       try { await FileSystem.deleteAsync(uri, { idempotent: true }); } catch {}
       const response = await fetch(`https://${domainRef.current}/api/openai/transcribe`, {
         method: "POST", headers: { "Content-Type": "application/json" },
