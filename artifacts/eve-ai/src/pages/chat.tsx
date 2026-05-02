@@ -167,7 +167,7 @@ export default function ChatPage() {
   const handleVoiceStop = async () => {
     setIsRecording(false);
     try {
-      const { blob } = await recorder.stopRecording();
+      const blob = await recorder.stopRecording();
       
       let currentConvId = conversationId;
       if (!currentConvId) {
