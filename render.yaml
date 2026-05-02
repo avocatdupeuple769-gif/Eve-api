@@ -4,11 +4,13 @@ services:
     runtime: node
     region: frankfurt
     plan: free
-    buildCommand: npx --yes pnpm@10 install --frozen-lockfile && npx pnpm@10 --filter @workspace/api-server run build
+    buildCommand: bash render-build.sh
     startCommand: bash render-start.sh
     envVars:
       - key: NODE_ENV
         value: production
+      - key: RENDER
+        value: "true"
       - key: GROQ_API_KEY
         sync: false
       - key: SESSION_SECRET
