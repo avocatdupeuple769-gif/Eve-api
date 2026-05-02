@@ -146,7 +146,7 @@ export default function HomeScreen() {
       recordingRef.current = null;
       setVoiceState("thinking");
       if (uri) {
-        const base64 = await FileSystem.readAsStringAsync(uri, { encoding: FileSystem.EncodingType.Base64 });
+        const base64 = await FileSystem.readAsStringAsync(uri, { encoding: "base64" as any });
         try { await FileSystem.deleteAsync(uri, { idempotent: true }); } catch {}
         await sendVoiceMessage(base64);
       }
