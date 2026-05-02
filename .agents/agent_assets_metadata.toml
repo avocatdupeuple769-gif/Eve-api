@@ -1,0 +1,14 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "22PeEPU-GtTzmt2ic769g"
+uri = "file://artifacts/eve-ai/public/logo.png"
+type = "image"
+title = "Punu mask logo for EVE"
+
+[[generated]]
+id = "YN-aUepI2YbLC8c2SHI9h"
+uri = "file://artifacts/eve-mobile/assets/images/icon.png"
+type = "image"
+title = "eve punu mask icon"

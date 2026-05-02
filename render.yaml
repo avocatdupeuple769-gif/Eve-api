@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: eve-api
+    runtime: node
+    region: frankfurt
+    plan: free
+    buildCommand: npm install -g pnpm@10 && pnpm install && pnpm run typecheck:libs && pnpm --filter @workspace/api-server run build
+    startCommand: bash render-start.sh
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GROQ_API_KEY
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false
