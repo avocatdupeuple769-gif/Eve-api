@@ -33,7 +33,7 @@ function RootLayoutNav() {
           title: "HISTORY",
           headerStyle: { backgroundColor: "#0C0C22" },
           headerTintColor: "#C9A228",
-          headerTitleStyle: { fontFamily: "Inter_600SemiBold", letterSpacing: 2, fontSize: 13 },
+          headerTitleStyle: { fontFamily: "Inter_600SemiBold", fontSize: 13 } as any,
           headerBackTitle: "EVE",
         }}
       />
@@ -43,7 +43,7 @@ function RootLayoutNav() {
           title: "SETTINGS",
           headerStyle: { backgroundColor: "#0C0C22" },
           headerTintColor: "#C9A228",
-          headerTitleStyle: { fontFamily: "Inter_600SemiBold", letterSpacing: 2, fontSize: 13 },
+          headerTitleStyle: { fontFamily: "Inter_600SemiBold", fontSize: 13 } as any,
           headerBackTitle: "EVE",
         }}
       />
