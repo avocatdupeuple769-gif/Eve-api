@@ -8,11 +8,16 @@ const connectionString = process.env.DATABASE_URL ?? process.env.NEON_DATABASE_U
 
 if (!connectionString) {
   throw new Error(
-    "DATABASE_URL or NEON_DATABASE_URL must be set. Did you forget to provision a database?",
+    "DATABASE_URL must be set. Provide your Neon/PostgreSQL connection string.",
   );
 }
 
-export const pool = new Pool({ connectionString });
+const isNeon = connectionString.includes("neon.tech");
+
+export const pool = new Pool({
+  connectionString,
+  ssl: isNeon ? { rejectUnauthorized: false } : undefined,
+});
 export const db = drizzle(pool, { schema });
 
 export async function ensureSchema(): Promise<void> {
