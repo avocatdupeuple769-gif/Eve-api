@@ -1,5 +1,8 @@
 import { defineConfig } from "drizzle-kit";
+import { fileURLToPath } from "url";
 import path from "path";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const url = process.env.DATABASE_URL ?? process.env.NEON_DATABASE_URL;
 
