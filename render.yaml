@@ -15,5 +15,5 @@ services:
         sync: false
       - key: SESSION_SECRET
         generateValue: true
-      - key: NEON_DATABASE_URL
+      - key: DATABASE_URL
         sync: false
