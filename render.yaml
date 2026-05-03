@@ -5,7 +5,7 @@ services:
     region: frankfurt
     plan: free
     buildCommand: pnpm install && pnpm --filter @workspace/api-server run build
-    startCommand: bash render-start.sh
+    startCommand: node --enable-source-maps artifacts/api-server/dist/index.mjs
     envVars:
       - key: NODE_ENV
         value: production
