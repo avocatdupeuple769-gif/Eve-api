@@ -13,7 +13,7 @@ import {
   TranscribeAudioBody,
 } from "@workspace/api-zod";
 import { groq, CHAT_MODEL, TRANSCRIPTION_MODEL } from "../../lib/groq";
-import { ensureCompatibleFormat } from "@workspace/integrations-openai-ai-server/audio";
+import { ensureCompatibleFormat } from "../../lib/audio";
 import { toFile } from "groq-sdk";
 import { logger } from "../../lib/logger";
 
